@@ -125,6 +125,11 @@ EVaJson UVaRestJsonValue::GetType() const
 	}
 }
 
+EVaJson UVaRestJsonValue::wGetType() const
+{
+	return GetType();
+}
+
 FString UVaRestJsonValue::GetTypeString() const
 {
 	if (!JsonVal.IsValid())
@@ -160,6 +165,11 @@ FString UVaRestJsonValue::GetTypeString() const
 	}
 }
 
+FString UVaRestJsonValue::wGetTypeString() const
+{
+	return GetTypeString();
+}
+
 bool UVaRestJsonValue::IsNull() const
 {
 	if (!JsonVal.IsValid())
@@ -168,6 +178,11 @@ bool UVaRestJsonValue::IsNull() const
 	}
 
 	return JsonVal->IsNull();
+}
+
+bool UVaRestJsonValue::wIsNull() const
+{
+	return IsNull();
 }
 
 float UVaRestJsonValue::AsNumber() const
@@ -181,6 +196,11 @@ float UVaRestJsonValue::AsNumber() const
 	return JsonVal->AsNumber();
 }
 
+float UVaRestJsonValue::wAsNumber() const
+{
+	return AsNumber();
+}
+
 FString UVaRestJsonValue::AsString() const
 {
 	if (!JsonVal.IsValid())
@@ -192,6 +212,11 @@ FString UVaRestJsonValue::AsString() const
 	return JsonVal->AsString();
 }
 
+FString UVaRestJsonValue::wAsString() const
+{
+	retunr AsString();
+}
+
 bool UVaRestJsonValue::AsBool() const
 {
 	if (!JsonVal.IsValid())
@@ -201,6 +226,11 @@ bool UVaRestJsonValue::AsBool() const
 	}
 
 	return JsonVal->AsBool();
+}
+
+bool UVaRestJsonValue::wAsBool() const
+{
+	return AsBool();
 }
 
 TArray<UVaRestJsonValue*> UVaRestJsonValue::AsArray() const
@@ -225,6 +255,11 @@ TArray<UVaRestJsonValue*> UVaRestJsonValue::AsArray() const
 	return OutArray;
 }
 
+TArray<UVaRestJsonValue*> UVaRestJsonValue::wAsArray() const
+{
+	return AsArray();
+}
+
 UVaRestJsonObject* UVaRestJsonValue::AsObject()
 {
 	if (!JsonVal.IsValid())
@@ -239,6 +274,11 @@ UVaRestJsonObject* UVaRestJsonValue::AsObject()
 	JsonObj->SetRootObject(NewObj);
 
 	return JsonObj;
+}
+
+UVaRestJsonObject* UVaRestJsonValue::wAsObject()
+{
+	return AsObject();
 }
 
 //////////////////////////////////////////////////////////////////////////

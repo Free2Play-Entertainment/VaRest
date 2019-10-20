@@ -66,37 +66,61 @@ class VARESTPLUGIN_API UVaRestJsonValue : public UObject
 	// FJsonValue API
 
 	/** Get type of Json value (Enum) */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	EVaJson GetType() const;
 
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	EVaJson wGetType() const;
+
 	/** Get type of Json value (String) */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	FString GetTypeString() const;
 
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	FString wGetTypeString() const;
+
 	/** Returns true if this value is a 'null' */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	bool IsNull() const;
+
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	bool wIsNull() const;
 
 	/** Returns this value as a double, throwing an error if this is not an Json Number
 	 * Attn.!! float used instead of double to make the function blueprintable! */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	float AsNumber() const;
+	
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	float wAsNumber() const;
 
 	/** Returns this value as a number, throwing an error if this is not an Json String */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	FString AsString() const;
+	
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	FString wAsString() const;
 
 	/** Returns this value as a boolean, throwing an error if this is not an Json Bool */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	bool AsBool() const;
+	
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	bool wAsBool() const;
 
 	/** Returns this value as an array, throwing an error if this is not an Json Array */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	TArray<UVaRestJsonValue*> AsArray() const;
+	
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	TArray<UVaRestJsonValue*> wAsArray() const;
 
 	/** Returns this value as an object, throwing an error if this is not an Json Object */
-	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
+	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	UVaRestJsonObject* AsObject();
+	
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Json", meta=(DeprecatedFunction, DeprecationMessage="Callable getters will be removed soon. Please use pure getters instead."))
+	UVaRestJsonObject* wAsObject();
 
 	//////////////////////////////////////////////////////////////////////////
 	// Data
