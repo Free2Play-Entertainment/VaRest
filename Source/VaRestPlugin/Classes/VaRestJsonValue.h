@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "VaRestPluginDefines.h"
+#include "../Private/VaRestPluginDefines.h"
 
 #include "VaRestJsonValue.generated.h"
 
